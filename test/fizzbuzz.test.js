@@ -10,6 +10,7 @@ Escribir una función que al pasarle un número
 
 const fizzbuzz = (number) => {
     if (typeof number != 'number') throw new Error('parameter provided must be a number')
+    if (Number.isNaN(number)) throw new Error('parameter provided must be a number')
 }
 
 describe('fizzbuzz', () => {
@@ -23,5 +24,9 @@ describe('fizzbuzz', () => {
 
   it('should throw a specific error message if not number is provided as parameters', () => {
     expect(() => fizzbuzz()).toThrow(/number/)
+  });
+
+  it('should throw a specific error message not number is provided', () => {
+    expect(() => fizzbuzz(NaN)).toThrow(/number/)
   });
 });
