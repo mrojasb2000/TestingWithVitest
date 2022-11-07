@@ -16,9 +16,10 @@ const fizzbuzz = (number) => {
 }
 
 describe('fizzbuzz', () => {
-  it('should be a function', () => {
-    expect(typeof fizzbuzz).toBe('function')
-  });
+  // Remove redundant test
+  // it('should be a function', () => {
+  //   expect(typeof fizzbuzz).toBe('function')
+  // });
 
   it('should throw if not number is provided as parameters', () => {
     expect(() => fizzbuzz()).toThrow()
@@ -36,13 +37,19 @@ describe('fizzbuzz', () => {
     expect(fizzbuzz(1)).toBe(1)
   });
 
-  it('should return 2 if number provided is 2', () => {
-    expect(fizzbuzz(2)).toBe(2)
-  });
+  // Remove redundant test
+  // it('should return 2 if number provided is 2', () => {
+  //   expect(fizzbuzz(2)).toBe(2)
+  // });
 
   it('should return "fizz" if number provided is 3', () => {
     expect(fizzbuzz(3)).toBe('fizz')
     expect(fizzbuzz(6)).toBe('fizz')
     expect(fizzbuzz(9)).toBe('fizz')
   });
+
+  // Remove redundant test
+  // it('should return 4 if number provided is 4', () => {
+  //   expect(fizzbuzz(4)).toBe(4)
+  // });
 });
