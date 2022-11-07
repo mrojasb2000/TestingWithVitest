@@ -11,6 +11,7 @@ Escribir una función que al pasarle un número
 const fizzbuzz = (number) => {
     if (typeof number != 'number') throw new Error('parameter provided must be a number')
     if (Number.isNaN(number)) throw new Error('parameter provided must be a number')
+    if (number % 3 == 0) return 'fizz'
     return number;
 }
 
@@ -37,5 +38,11 @@ describe('fizzbuzz', () => {
 
   it('should return 2 if number provided is 2', () => {
     expect(fizzbuzz(2)).toBe(2)
+  });
+
+  it('should return "fizz" if number provided is 3', () => {
+    expect(fizzbuzz(3)).toBe('fizz')
+    expect(fizzbuzz(6)).toBe('fizz')
+    expect(fizzbuzz(9)).toBe('fizz')
   });
 });
