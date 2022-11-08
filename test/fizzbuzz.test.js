@@ -12,7 +12,7 @@ const fizzbuzz = (number) => {
     if (typeof number != 'number') throw new Error('parameter provided must be a number')
     if (Number.isNaN(number)) throw new Error('parameter provided must be a number')
 
-    if (number % 3 == 0 && number % 5 == 0 ) return 'fizzbuzz'
+    if (number % 15 == 0 ) return 'fizzbuzz'
     if (number % 3 == 0) return 'fizz'
     if (number % 5 == 0) return 'buzz'
     
@@ -64,5 +64,8 @@ describe('fizzbuzz', () => {
 
   it('should return "buzz if number provided is multiple of 3 and multiple 5', () => {
     expect(fizzbuzz(15)).toBe('fizzbuzz')
+    expect(fizzbuzz(30)).toBe('fizzbuzz')
+    expect(fizzbuzz(60)).toBe('fizzbuzz')
+    expect(fizzbuzz(90)).toBe('fizzbuzz')
   });
 });
