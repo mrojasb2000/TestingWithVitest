@@ -11,7 +11,11 @@ Escribir una función que al pasarle un número
 const fizzbuzz = (number) => {
     if (typeof number != 'number') throw new Error('parameter provided must be a number')
     if (Number.isNaN(number)) throw new Error('parameter provided must be a number')
+
+    if (number % 3 == 0 && number % 5 == 0 ) return 'fizzbuzz'
     if (number % 3 == 0) return 'fizz'
+    if (number % 5 == 0) return 'buzz'
+    
     return number;
 }
 
@@ -52,4 +56,13 @@ describe('fizzbuzz', () => {
   // it('should return 4 if number provided is 4', () => {
   //   expect(fizzbuzz(4)).toBe(4)
   // });
+
+  it('should return "buzz if number provided is multiple of 5', () => {
+    expect(fizzbuzz(5)).toBe('buzz')
+    expect(fizzbuzz(10)).toBe('buzz')
+  });
+
+  it('should return "buzz if number provided is multiple of 3 and multiple 5', () => {
+    expect(fizzbuzz(15)).toBe('fizzbuzz')
+  });
 });
